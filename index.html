@@ -1,54 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Alarm Clock & Timer – Chrome Extension</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Alarm Clock & Timer — Chrome Extension</title>
   <meta name="description" content="Set alarms & timers with snooze, repeat, and synced dark/light themes — works in popup and fullscreen.">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header class="bar">
-    <div class="wrap">
-      <h1>⏰ Smart Alarm Clock & Timer</h1>
-      <p class="tagline">Snooze & Stop • Sync between Popup and Fullscreen • Dark/Light Themes</p>
+  <header class="header">
+    <div class="wrap inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>Smart Alarm Clock & Timer</h1>
+      </div>
       <nav>
+        <a href="#features">Features</a>
         <a href="privacy.html">Privacy</a>
         <a href="contact.html">Contact</a>
+        <a class="cta" href="#" title="Chrome Web Store link" aria-label="Install from Chrome Web Store">Install</a>
       </nav>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="card">
-      <h2>Why you’ll love it</h2>
-      <ul>
-        <li><strong>Snooze & Stop</strong> controls for alarms and timers</li>
-        <li><strong>Sync</strong> state between popup and fullscreen</li>
-        <li><strong>Custom themes</strong> (dark/light) plus corner radius</li>
-        <li><strong>Repeat timers</strong> and sound picker (with Test)</li>
-        <li>Lightweight and privacy‑friendly (no personal data)</li>
-      </ul>
-    </section>
+  <section class="wrap hero">
+    <h2>Stay on time. Stay in control.</h2>
+    <p class="tag">Snooze & Stop controls, synced popup ↔ fullscreen, dark/light themes with corner radius, repeat timers, and sound picker — everything you need to manage time right in your browser.</p>
+    <div class="badges">
+      <span class="badge">Snooze + Stop</span>
+      <span class="badge">Popup ↔ Fullscreen Sync</span>
+      <span class="badge">Dark / Light + Custom Corner</span>
+      <span class="badge">Repeat Timers</span>
+      <span class="badge">No personal data</span>
+    </div>
+  </section>
 
-    <section class="cards">
+  <main class="wrap">
+    <h2 id="features">Features</h2>
+    <div class="grid">
       <div class="card">
-        <h3>Install</h3>
-        <p>Find it on the Chrome Web Store (link coming soon).</p>
+        <h3>Alarms & Timers</h3>
+        <ul class="clean">
+          <li>Quick timer start, pause, reset, and repeat</li>
+          <li>Set single or repeating alarms</li>
+          <li>Choose sounds and test instantly</li>
+        </ul>
       </div>
       <div class="card">
-        <h3>Usage</h3>
-        <p>Open the popup to set timers/alarms. Switch to fullscreen for a large clock view.</p>
+        <h3>Beautiful Themes</h3>
+        <ul class="clean">
+          <li>Dark and Light themes</li>
+          <li>Corner radius slider</li>
+          <li>Readable color palettes</li>
+        </ul>
       </div>
       <div class="card">
-        <h3>Support</h3>
-        <p>Questions? <a href="contact.html">Contact us</a> — we’re happy to help.</p>
+        <h3>Seamless Sync</h3>
+        <ul class="clean">
+          <li>Popup and fullscreen always match</li>
+          <li>Preferences stored locally</li>
+          <li>Lightweight and fast</li>
+        </ul>
       </div>
-    </section>
+    </div>
   </main>
 
-  <footer class="bar foot">
-    <div class="wrap small">© 2025 Smart Alarm Clock & Timer</div>
+  <footer>
+    <div class="wrap">
+      <div class="small">© 2025 Smart Alarm Clock & Timer</div>
+      <div class="small"><a class="cta" href="#" title="Chrome Web Store">Install</a></div>
+    </div>
   </footer>
 </body>
 </html>
