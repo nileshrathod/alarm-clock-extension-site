@@ -5,16 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Smart Alarm Clock & Timer</title>
   <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* Page‑local tweaks in case site CSS isn't updated yet */
+    form.contact {max-width:680px;margin:18px auto;background:var(--card);border:1px solid var(--bd);
+      padding:18px;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.12)}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .row .field{flex:1 1 240px}
+    label{display:block;font-weight:600;margin:8px 0 6px}
+    input[type=text],input[type=email],textarea{
+      width:100%;padding:10px 12px;border:1px solid var(--bd);border-radius:10px;background:transparent;color:var(--fg)
+    }
+    textarea{min-height:140px;resize:vertical}
+    .actions{display:flex;gap:10px;align-items:center;justify-content:flex-start;margin-top:12px}
+    button.primary{background:#f59e0b;border:none;color:#111827;padding:10px 16px;border-radius:10px;font-weight:700;cursor:pointer}
+    .muted{color:var(--muted);font-size:.9rem}
+    .success{display:none;margin-top:10px;color:#10b981;font-weight:600}
+  </style>
 </head>
 <body>
   <header class="bar"><div class="wrap"><h1>Contact</h1></div></header>
   <main class="wrap">
     <p>We’d love to hear from you.</p>
-    <ul>
-     <li>Email: <a href="mailto:njrathod@gmail.com">njrathod@gmail.com</a></li>
-      <li>GitHub: <a href="#" target="_blank" rel="noopener">Repository (add link)</a></li>
-    </ul>
-    <p>When contacting us, please include your Chrome version and any steps to reproduce issues.</p>
+
+    <form class="contact" id="contactForm">
+      <div class="row">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field" style="flex:1 1 100%">
+          <label for="subject">Subject</label>
+          <input id="subject" type="text" placeholder="How can we help?" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field" style="flex:1 1 100%">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Describe the issue or request..." required></textarea>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="primary">Send</button>
+        <span class="muted">This opens your email app with the details pre‑filled.</span>
+      </div>
+      <div id="ok" class="success">Opening your email app…</div>
+    </form>
+
+    <script>
+      const TO = "njrathod@gmail.com"; // your email
+      document.getElementById('contactForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const from = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim() || 'Support request';
+        const message = document.getElementById('message').value.trim();
+
+        const body = `Name: ${name}%0D%0AEmail: ${from}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+        const link = `mailto:${TO}?subject=${encodeURIComponent(subject)}&body=${body}`;
+        document.getElementById('ok').style.display='block';
+        window.location.href = link;
+      });
+    </script>
+
+    <p class="muted">Prefer email? Write to <a href="mailto:njrathod@gmail.com">njrathod@gmail.com</a>.</p>
   </main>
   <footer class="bar foot"><div class="wrap small">© 2025 Smart Alarm Clock & Timer</div></footer>
 </body>
